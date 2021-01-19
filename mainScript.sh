@@ -1,4 +1,5 @@
-\echo "Computation and  Sorting"
+#!/bin/bash -x
+echo "Computation and  Sorting"
 echo "Enter Number "
 echo "Enter First Number"
 read firstNumber
@@ -41,9 +42,14 @@ arr=( $resultFirst $resultSecond $resultThird $resultFourth )
  
 for (( i=0 ; $i < 4 ; i++ ))
 do 
-	arr["result"$i]=${arr[i]}
+	key1=result$i
+	arr1[$key1]=${arr[i]}
 done
-for i1 in "${arr[@]}"
+for i in "${arr[@]}"
 do
-	echo $i1
+	echo $i
+done
+for key in ${!rr1[@]}; 
+do
+    echo ${key} ${arr1[${key}]}
 done
