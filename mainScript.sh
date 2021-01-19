@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash 
 echo "Computation and  Sorting"
 echo "Enter Number "
 echo "Enter First Number"
@@ -49,7 +49,42 @@ for i in "${arr[@]}"
 do
 	echo $i
 done
-for key in ${!rr1[@]}; 
+for key in ${!arr1[@]}; 
 do
     echo ${key} ${arr1[${key}]}
 done
+for (( i1=0 ; $i1 < 4 ; i1++ ))
+do
+for (( i=0 ; $i < 4 ; i++ ))
+do
+	if [ ${arr[i+1]} -lt ${arr[i]} ]
+	then 
+		temp=${arr[i]}
+		arr[i]=${arr[i+1]}
+		arr[i+1]=$temp
+	fi
+done
+done
+echo "Ascending Order"
+for i in "${arr[@]}"
+do
+        echo $i
+done
+for (( i1=0 ; $i1 < 4 ; i1++ ))
+do
+for (( i=0 ; $i < 4 ; i++ ))
+do
+        if [ ${arr[i+1]} -gt ${arr[i]} ]
+        then
+                temp=${arr[i]}
+                arr[i]=${arr[i+1]}
+                arr[i+1]=$temp
+        fi
+done
+done
+echo "Ascending Order"
+for i in "${arr[@]}"
+do
+        echo $i
+done 
+
