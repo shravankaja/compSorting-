@@ -39,15 +39,12 @@ esac
         resultFourth=$(( $firstNumber % $secondNumber * $thirdNumber ))
 
 arr=( $resultFirst $resultSecond $resultThird $resultFourth )
- 
+arr2=( A+B*C A*B+C A+B/C A%B*C)
+declare -A arr1
 for (( i=0 ; $i < 4 ; i++ ))
 do 
-	key1=result$i
-	arr1[$key1]=${arr[i]}
-done
-for i in "${arr[@]}"
-do
-	echo $i
+	
+	arr1[${arr2[i]}]=${arr[i]}
 done
 for key in ${!arr1[@]}; 
 do
