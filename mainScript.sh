@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash 
 echo "Computation and  Sorting"
 echo "Enter Number "
 echo "Enter First Number"
@@ -39,17 +39,14 @@ esac
         resultFourth=$(( $firstNumber % $secondNumber * $thirdNumber ))
 
 arr=( $resultFirst $resultSecond $resultThird $resultFourth )
- 
+arr2=( A+B*C A*B+C A+B/C A%B*C)
+declare -A arr1
 for (( i=0 ; $i < 4 ; i++ ))
 do 
-	key1=result$i
-	arr1[$key1]=${arr[i]}
+	
+	arr1[${arr2[i]}]=${arr[i]}
 done
-for i in "${arr[@]}"
-do
-	echo $i
-done
-for key in ${!rr1[@]}; 
+for key in ${!arr1[@]}; 
 do
     echo ${key} ${arr1[${key}]}
 done
